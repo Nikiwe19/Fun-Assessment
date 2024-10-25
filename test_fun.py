@@ -6,7 +6,7 @@ from io import StringIO
 
 class TestFun(unittest.TestCase):
     @patch('builtins.input', side_effect=[20])
-    def test_dog_years(self, mock_input):
+    def test_dog_years(self, captured_output):
         captured_output = StringIO()
         sys.stdout = captured_output
         dog_years()
